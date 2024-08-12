@@ -50,3 +50,4 @@
 // git remote add origin <url dle repo> : esto me indica de donde voy a obtener los cambios
 // - en mi repo y a donde voy a subir cambios
 // git push -u origin <rama> : sube los cambios y crea la rama en mi repo en gitHub
+// git reset --hard HEAD me restable mis archivo al ultimo commit, elimando todo
