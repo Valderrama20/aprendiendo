@@ -186,3 +186,26 @@ const revertirLista = (list) => {
 };
 
 revertirLista(lista);
+
+// Ejercicio: Eliminar un Nodo en una Lista Doblemente Enlazada
+
+// Descripción:
+// Dada una lista doblemente enlazada, escribe una función que elimine un nodo
+//  dado de la lista. La función debe actualizar los punteros prev y next de
+//   los nodos adyacentes para mantener la integridad de la lista.
+
+const eliminarNodo = (list, eliminar) => {
+  if (!list) return "no se encontro el nodo";
+
+  if (list.nodo === eliminar) {
+    if (list.prev) {
+      list.prev.next = list.next;
+    }
+    if (list.next) {
+      list.next.prev = list.prev;
+    }
+    return "nodo eliminado";
+  }
+
+  return eliminarNodo(list.next, eliminar);
+};
