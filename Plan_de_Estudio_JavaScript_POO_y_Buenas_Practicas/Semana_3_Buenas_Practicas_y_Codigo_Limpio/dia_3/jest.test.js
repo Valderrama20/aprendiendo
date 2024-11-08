@@ -13,3 +13,5 @@ test("deberia devolver 0 para un arr vacio", () => {
 test("deberia funcionar con numero negativos", () => {
   expect(sumArr([-5, -1, -7, -9])).toBe(-22);
 });
+
+
