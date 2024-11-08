@@ -1,0 +1,231 @@
+1. Fundamentos del Backend
+Antes de meterte de lleno en frameworks o tecnologías, es crucial entender cómo funciona el backend a nivel conceptual.
+
+Conceptos a estudiar:
+HTTP y HTTPS: Aprende cómo funcionan las peticiones, respuestas, headers, códigos de estado (200, 404, 500, etc.).
+RESTful API: Entender el estilo de arquitectura REST y cómo construir APIs siguiendo sus principios.
+CRUD: Operaciones básicas en la creación de una API: Create, Read, Update, Delete.
+Autenticación vs Autorización: Conocer las diferencias y cómo aplicarlas.
+Protocolo TCP/IP: Cómo funciona la comunicación en redes.
+JSON y XML: Formatos de intercambio de datos. JSON es el más común, pero también es útil entender XML.
+CORS: Controlar las políticas de origen cruzado en el backend.
+
+2. Node.js y Express.js
+Dado que ya conoces JavaScript/TypeScript, lo más natural es que comiences aprendiendo Node.js y Express.js. Aquí puedes aplicar directamente lo que ya sabes y aprovechar las ventajas de un stack unificado (JavaScript en frontend y backend).
+
+Conceptos y herramientas:
+Node.js: Entiende el entorno de ejecución, el modelo de eventos, la asincronía (callbacks, promesas, async/await), y cómo funciona el bucle de eventos.
+Express.js: Un framework minimalista para construir APIs REST. Aprender a manejar rutas, middlewares, controladores, y cómo crear endpoints seguros.
+TypeScript en Node.js: Cómo configurar TypeScript en un proyecto de Node.js. Uso de tipados estáticos y ventajas sobre JavaScript.
+Manejo de errores: Buenas prácticas para gestionar errores y manejar excepciones tanto a nivel de código como a nivel de API (por ejemplo, responder con códigos de error adecuados).
+Temas específicos:
+Middlewares: Qué son y cómo utilizarlos en Express (ej. autenticación, logging).
+Manejo de formularios y archivos: Subida y manipulación de archivos, procesamiento de formularios HTML.
+Autenticación y autorización: JWT (JSON Web Tokens), OAuth2, manejo de sesiones y cookies.
+Enrutamiento avanzado: Cómo manejar rutas dinámicas y controladores más complejos.
+Validación de datos: Usar librerías como Joi o Yup para validar los datos recibidos en las peticiones.
+
+3. Bases de Datos
+El backend casi siempre está asociado al manejo de datos. Aquí debes familiarizarte con bases de datos relacionales y no relacionales.
+
+Bases de datos relacionales (SQL):
+PostgreSQL o MySQL: Aprende sobre diseño de bases de datos relacionales (tablas, relaciones, claves primarias y foráneas).
+ORM: Usa Sequelize o TypeORM para interactuar con bases de datos SQL en Node.js sin escribir queries SQL manualmente.
+Consultas avanzadas: UNION, JOIN, subconsultas, y cómo optimizar consultas para rendimiento.
+Bases de datos no relacionales (NoSQL):
+MongoDB: Entender cómo funcionan las bases de datos documentales. Aprende conceptos como colecciones, documentos, índices y cómo estructurar datos.
+ODM: Usa Mongoose como una herramienta para gestionar esquemas y validar datos con MongoDB.
+Otras bases de datos a considerar:
+Redis: Para almacenamiento en caché o como base de datos de clave-valor.
+Firebase: Si te interesa explorar bases de datos en tiempo real.
+Temas a estudiar:
+ACID y CAP Theorem: Qué significan y cómo afectan la elección y diseño de tus bases de datos.
+Transacciones: Cómo trabajar con transacciones en SQL para garantizar la integridad de los datos.
+Migraciones: Cómo aplicar cambios en la estructura de una base de datos de manera controlada.
+
+4. Autenticación y Seguridad
+La seguridad es un tema clave en el backend. Aquí aprenderás cómo proteger tu aplicación y los datos de los usuarios.
+
+Temas importantes:
+Autenticación: Implementa estrategias de autenticación como JWT o OAuth2.
+Autorización: Control de acceso a recursos (ej: roles y permisos).
+Hashing: Cómo utilizar el hashing para almacenar contraseñas de manera segura con bcrypt.
+Cifrado: Entiende conceptos básicos de cifrado de datos y cómo usarlos.
+Ataques comunes y cómo prevenirlos:
+SQL Injection: Uso de consultas parametrizadas.
+XSS (Cross-Site Scripting): Securizar datos de entrada y salida.
+CSRF (Cross-Site Request Forgery): Implementar tokens CSRF.
+Rate Limiting: Limitar el número de peticiones por usuario/IP.
+
+5. Infraestructura y DevOps
+El backend no es solo código, también debes comprender cómo desplegar y escalar tus aplicaciones.
+
+Herramientas y conceptos:
+Entornos de desarrollo, pruebas y producción: Cómo gestionar configuraciones y variables de entorno.
+Docker: Entender cómo containerizar aplicaciones para hacerlas portables y fáciles de desplegar.
+CI/CD: Conceptos de integración continua y despliegue continuo. Usa herramientas como GitHub Actions, Jenkins, o CircleCI.
+Deploy:
+Heroku (más sencillo para empezar).
+AWS, Google Cloud, o DigitalOcean si prefieres algo más robusto.
+Servidores: Aprende a configurar Nginx o Apache como servidores web.
+Logs y monitoreo: Usa herramientas como Winston o Morgan para logging y algo como Prometheus o Grafana para monitoreo.
+
+6. Testing en Backend
+Las pruebas son esenciales para asegurarse de que el código sea robusto y libre de errores.
+
+Herramientas y técnicas:
+Unit Testing: Usa herramientas como Jest o Mocha para realizar pruebas unitarias.
+Integration Testing: Probar la interacción entre componentes del sistema, por ejemplo, asegurarse de que los endpoints de tu API se comporten como se espera.
+Test de carga (Load Testing): Herramientas como Artillery o k6 para probar el rendimiento de tu servidor bajo carga.
+Mocking: Usa herramientas como Sinon.js para simular módulos y dependencias en pruebas.
+
+7. Arquitectura de Software
+A medida que tu backend crece, necesitas adoptar buenas prácticas de arquitectura para mantener el código limpio y escalable.
+
+Patrones y principios:
+MVC (Model-View-Controller): Aunque es más común en el frontend, es útil para estructurar APIs.
+Microservicios: Aprende sobre la arquitectura de microservicios y cuándo usarla en lugar de un monolito.
+GraphQL: Explora este lenguaje de consulta como una alternativa a REST, si te interesa construir APIs más flexibles.
+Mensajería y Colas: Usa herramientas como RabbitMQ o Kafka para gestionar mensajes y eventos entre microservicios.
+API Gateway: Centralizar el control de las APIs y gestionar seguridad y tráfico.
+
+8. Optimización y Escalabilidad
+Finalmente, es importante que tu backend sea escalable y eficiente.
+
+Técnicas y temas:
+Caching: Aprende a usar cache (ej. Redis) para reducir el acceso a la base de datos en operaciones frecuentes.
+Optimización de bases de datos: Indexación y consultas eficientes.
+Balanceo de carga: Aprende cómo funciona y cuándo aplicarlo.
+Tareas en segundo plano: Usa librerías como Bull para ejecutar tareas en segundo plano (job queues).
+WebSockets: Para aplicaciones en tiempo real, como chats o notificaciones.
+9. Recursos adicionales
+Documentación oficial: Para Node.js y Express.js es indispensable.
+Cursos: Plataformas como Udemy, Coursera, o Platzi tienen excelentes cursos de backend.
+Proyectos personales: Aplica lo que aprendes construyendo tu propia API o clonando aplicaciones como un blog, una tienda online o un servicio de chat.
+Con esta ruta vas a obtener una base sólida en desarrollo backend y estarás preparado para trabajar en proyectos reales. El backend es muy amplio, pero lo importante es que avances paso a paso. ¡Mucha suerte en tu camino!
+
+
+Semana 1: Fundamentos del Backend y Node.js con TypeScript
+Día 1: Introducción a HTTP, REST y Backend
+Teoría: Introducción a las peticiones HTTP, métodos (GET, POST, PUT, DELETE), códigos de estado.
+Ejercicio: Describe cómo harías una petición HTTP en formato GET y cómo sería el flujo de una API REST simple.
+Día 2: Configuración de Node.js con TypeScript
+Teoría: Instalación de Node.js y configuración de TypeScript en un proyecto.
+Ejercicio: Crea un proyecto de Node.js con TypeScript, configura el archivo tsconfig.json y ejecuta un simple archivo de prueba que imprima "Hello, World!".
+Día 3: Introducción a Express.js con TypeScript
+Teoría: Configuración básica de Express.js en TypeScript. Concepto de rutas.
+Ejercicio: Crea una API con Express y TypeScript que tenga una ruta GET /status que responda con un JSON { message: 'Server is running' }.
+Día 4: CRUD con Express.js
+Teoría: Conceptos CRUD (Create, Read, Update, Delete) en una API REST.
+Ejercicio: Crea una API CRUD para manejar una lista de "usuarios" con las rutas: GET /users, POST /users, PUT /users/:id, DELETE /users/:id.
+Día 5: Middlewares en Express
+Teoría: Introducción a los middlewares en Express.js.
+Ejercicio: Implementa un middleware que loguee todas las peticiones entrantes en la API que creaste en el día 4.
+Día 6: Manejo de errores en Express.js
+Teoría: Buenas prácticas para el manejo de errores y respuestas de errores HTTP.
+Ejercicio: Añade manejo de errores global a tu API CRUD y responde con mensajes y códigos de estado apropiados.
+Día 7: Ejercicio de integración
+Ejercicio final de la semana: Crea una API completa que gestione "tareas" (tasks) con operaciones CRUD, añade un middleware de logging, y maneja errores de manera robusta.
+
+Semana 2: Bases de Datos Relacionales (PostgreSQL) con TypeORM
+Día 8: Introducción a las Bases de Datos y PostgreSQL
+Teoría: Introducción a SQL y PostgreSQL, tablas, relaciones, claves primarias.
+Ejercicio: Instala PostgreSQL en tu entorno y crea una base de datos con una tabla users que tenga las columnas id, name, email.
+Día 9: Conexión de Express con PostgreSQL usando TypeORM
+Teoría: Introducción a TypeORM como ORM en TypeScript.
+Ejercicio: Conecta tu API de usuarios (CRUD) a PostgreSQL usando TypeORM y guarda/recupera los datos de la base de datos.
+Día 10: Relaciones en Bases de Datos (One-to-Many)
+Teoría: Relaciones entre tablas, clave foránea (foreign keys).
+Ejercicio: Extiende tu API para que cada usuario tenga "tareas" asociadas (relación uno-a-muchos entre users y tasks).
+Día 11: Consultas avanzadas con TypeORM
+Teoría: Consultas más complejas (joins, filtros).
+Ejercicio: Implementa una ruta que devuelva todas las tareas de un usuario específico usando una consulta con relación.
+Día 12: Migraciones de Base de Datos
+Teoría: Qué son las migraciones y cómo aplicarlas con TypeORM.
+Ejercicio: Crea y aplica migraciones para modificar la estructura de la base de datos (por ejemplo, añade un campo age a la tabla de users).
+Día 13: Transacciones en Base de Datos
+Teoría: Introducción a las transacciones en bases de datos.
+Ejercicio: Implementa una transacción que crea un nuevo usuario y, si falla la creación de una tarea, revierta ambos procesos.
+Día 14: Ejercicio de integración
+Ejercicio final de la semana: Crea una API para gestionar un "proyecto" que tiene "tareas" asociadas y donde cada tarea pertenece a un usuario. Usa PostgreSQL, TypeORM y Express.
+
+Semana 3: Bases de Datos NoSQL (MongoDB)
+Día 15: Introducción a MongoDB
+Teoría: Conceptos básicos de bases de datos NoSQL. Introducción a MongoDB.
+Ejercicio: Instala MongoDB y crea una base de datos para almacenar usuarios.
+Día 16: Conexión de Express con MongoDB usando Mongoose
+Teoría: Introducción a Mongoose como ODM en TypeScript.
+Ejercicio: Conecta tu API de usuarios a MongoDB usando Mongoose y guarda/recupera los datos de la base de datos.
+Día 17: Modelado de datos con MongoDB
+Teoría: Estructura de datos en MongoDB, esquema flexible.
+Ejercicio: Crea un esquema flexible para las "tareas" en MongoDB y asócialas con los usuarios.
+Día 18: Validación de datos con Mongoose
+Teoría: Validación y esquemas en MongoDB con Mongoose.
+Ejercicio: Añade validación a los datos de usuarios y tareas (por ejemplo, asegurarte de que el email es único).
+Día 19: Consultas avanzadas en MongoDB
+Teoría: Filtros y consultas complejas en MongoDB.
+Ejercicio: Implementa una ruta que devuelva todas las tareas de un usuario, pero permite filtrar las tareas por estado (completado o pendiente).
+Día 20: MongoDB vs PostgreSQL (casos de uso)
+Teoría: Comparación entre MongoDB y PostgreSQL. Cuándo usar bases de datos SQL o NoSQL.
+Ejercicio: Describe cómo estructurarías los datos de un foro online en MongoDB comparado con PostgreSQL.
+Día 21: Ejercicio de integración
+Ejercicio final de la semana: Crea una API con Express y Mongoose para gestionar una aplicación de "notas", donde cada usuario puede tener varias notas y debe poder filtrarlas por fecha o palabra clave.
+
+Semana 4: Seguridad y Autenticación
+Día 22: Introducción a la Autenticación (JWT)
+Teoría: Introducción a JSON Web Tokens (JWT).
+Ejercicio: Implementa la autenticación con JWT en la API que creaste en la semana 2. Los usuarios deben poder registrarse e iniciar sesión.
+Día 23: Autorización basada en roles
+Teoría: Autorización y control de acceso basado en roles.
+Ejercicio: Implementa roles (por ejemplo, "admin" y "user") en tu API y asegúrate de que solo los "admins" pueden borrar usuarios.
+Día 24: Hashing de contraseñas
+Teoría: Hashing de contraseñas con bcrypt.
+Ejercicio: Implementa el hashing de contraseñas antes de guardarlas en la base de datos y crea un endpoint para iniciar sesión que valide la contraseña.
+Día 25: Protección contra ataques comunes (SQL Injection, XSS)
+Teoría: Conceptos de seguridad: SQL Injection, XSS, CORS.
+Ejercicio: Revisa tu API y asegúrate de que está protegida contra SQL Injection y XSS. Añade middleware de CORS para protegerla.
+Día 26: Rate Limiting y protección contra DoS
+Teoría: Rate Limiting y ataques DoS.
+Ejercicio: Añade rate limiting a tu API usando un middleware para limitar el número de peticiones por usuario.
+Día 27: Seguridad en el almacenamiento de datos
+Teoría: Buenas prácticas para asegurar el almacenamiento de datos.
+Ejercicio: Implementa cifrado de datos sensibles en tu API, como números de tarjetas de crédito o datos personales.
+Día 28: Ejercicio de integración
+Ejercicio final de la semana: Crea una API de autenticación completa (con registro, login, roles y autorización) y protégela contra ataques comunes.
+
+Semana 5: Optimización y Escalabilidad
+Día 29: Caching en APIs
+Teoría: Introducción al uso de Redis para caching.
+Ejercicio: Añade caching con Redis a tu API para optimizar las peticiones que devuelven listas largas de datos.
+Día 30: Paginación en APIs
+Teoría: Conceptos de paginación y cómo aplicarla en APIs.
+Ejercicio: Implementa paginación en la ruta GET /users de tu API para manejar grandes cantidades de usuarios.
+Día 31: Optimización de consultas en bases de datos
+Teoría: Indexación y optimización de consultas en PostgreSQL y MongoDB.
+Ejercicio: Crea índices para las columnas que más consultas reciben en tu base de datos de PostgreSQL y MongoDB.
+Día 32: Balanceo de carga
+Teoría: Introducción al balanceo de carga y cómo escalar aplicaciones.
+Ejercicio: Describe cómo implementarías un balanceador de carga para tu API en un entorno de producción.
+Día 33: Escalabilidad con Microservicios
+Teoría: Introducción a la arquitectura de microservicios.
+Ejercicio: Divide una aplicación monolítica en dos microservicios: uno para usuarios y otro para tareas.
+Día 34: Comunicación entre microservicios
+Teoría: Comunicación asincrónica entre microservicios (RabbitMQ, Kafka).
+Ejercicio: Simula la comunicación entre dos microservicios usando colas de mensajes (por ejemplo, usando RabbitMQ).
+Día 35: Ejercicio de integración
+Ejercicio final de la semana: Refactoriza tu API de tareas y usuarios en dos microservicios separados, que se comuniquen entre sí usando mensajes o eventos.
+
+Semanas 6 a 8: Proyecto Final
+Días 36-60: Construcción de un Proyecto Completo
+Durante las últimas tres semanas, te enfocarás en construir un proyecto completo que integre todo lo aprendido:
+
+Proyecto sugerido: Un sistema de gestión de proyectos colaborativos (como Trello o Asana), con funcionalidades para crear proyectos, asignar tareas, gestión de usuarios, roles, autenticación y autorización.
+Componentes clave:
+API con Express y TypeScript.
+Autenticación y autorización con JWT.
+Gestión de usuarios y roles (admin/user).
+Conexión a PostgreSQL o MongoDB (o ambas).
+Validación de datos y manejo de errores.
+Paginación y caché para optimizar rendimiento.
+Tests unitarios e integrados con Jest.
+Despliegue usando Docker y una plataforma de nube (Heroku, AWS, etc.).
