@@ -33,21 +33,142 @@
 // de entradas de datos relacionados y consta de columnas y filas.
 
 
-// Para selecionar todas las columna de una tala utilizos SELECT, el *
-// que indica todos y FROM para indicar la tabla en donde se va a buscar 
-
-"SELECT * FROM Users"
-
 // Algunos de los comandos mas imnportantes de sql son:
 
 "SELECT"  // - extrae datos de una base de datos
 "UPDATE"  // - actualiza los datos en una base de datos
 "DELETE"  // - elimina datos de una base de datos
-"INSERT"  // INTO- inserta nuevos datos en una base de datos
-"CREATE"  // DATABASE- crea una nueva base de datos
-"ALTER"   // DATABASE- modifica una base de datos
-"CREATE"  // TABLE- crea una nueva tabla
-"ALTER"   // TABLE- modifica una tabla
-"DROP"    // TABLE- elimina una tabla
-"CREATE"  // INDEX- crea un índice (clave de búsqueda)
-"DROP"    // INDEX- elimina un índice
+"INSERT INTO"  // - inserta nuevos datos en una base de datos
+"CREATE DATABASE"  // - crea una nueva base de datos
+"ALTER DATABASE"   // - modifica una base de datos
+"CREATE TABLE"  // - crea una nueva tabla
+"ALTER TABLE"   // - modifica una tabla
+"DROP TABLE"    // - elimina una tabla
+"CREATE INDEX"  // - crea un índice (clave de búsqueda)
+"DROP INDEX"    // - elimina un índice
+
+// -- La Declaración SQL SELECT
+
+// SELECT se utiliza para seleccionar datos de una tabla
+
+// Ejemplo: devovler datos del cliente
+
+"SELECT custormer_name, city FROM Customers"
+
+// Aqui customer_name y city son los nombres de los campos de la tabla
+// de la cuales se desea informacion y Customers es el nombre de la tabla
+
+// Seleccionar todas las columnas
+
+// Para seleccionar todas las columnas sin tener que especificar los nombres
+// utilizamos SELECT *, el * para indica que queremos todos los campos
+
+"SELECT * FROM Users"
+
+// -- La Declaración SQL SELECT DISTINCT
+
+// SELECT DISTINCT la utilizamos para seleccioanar todos los valores de un
+// campo que sean distintos, en pocas palabras si un campo es igual a otro solo se 
+// tomara uno, eliminando los valores duplicados
+
+"SELECT DISTINCT Country FROM Customers"
+
+// -- COUNT DISTINCT
+
+// Al usar DISTINCT en una funcion llamada COUNT podemos devolver el numero de paises diferente
+
+"SELECT COUNT(DISTINCT Country) FROM Customers"
+
+// El CONTAR(DISTINTO column_nombre) no es compatible con las bases de datos de Microsoft Access.
+
+"SELECT Count(*) AS DistinctCountries"
+"FROM (SELECT DISTINCT Country FROM Customers);"
+
+// -- SQL WHERE Clause
+
+// WHERE lo utilizamos para filtrar registros
+// Se utiliza para extraer solo aquellos registros que cumplan con una condicion
+
+// Ejemplo: 
+
+"SELECT * FROM Customers WHERE Country = 'Mexico'"
+
+// WHERE lo podemos utilizar tambien en UPDATE, DELETE, etc
+
+// -- Campos de Texto vs. Campos Numéricos
+
+// SQL requiere comillas alrededor de los campos de texto pero 
+// los campos numericos no deben estar entre comillas
+
+"SELECT * FROM Customers WHERE CustomerId=1"
+
+// -- Operadores en WHERE
+
+// Podemos utilizar diferentes operadores para filtrar las busquedas
+
+// Ejemplo: Selecciona todos los clientes con un CustomerID mayor de 80
+
+"SELECT * FROM Customers WHERE CustomerID > 80"
+
+// -- Operadores
+
+`
+=
+>
+<
+>=
+<=
+<>      - tabien se podria utilizar !=
+BETWEEN - Entre un rango especifico. BETWEEN 50 AND 60
+LIKE    - Buscar un patron WHERE City LIKE "s%"
+IN      - Para busca ciertos valores WHERE City IN ('Paris','London')
+`
+
+// -- SQL ORDER BY Keyword - Ordernar por palabras
+
+// ORDER BY se utiliza para ordenar el conjunto de resultados 
+// en onder ascendente o descendente
+
+// Ejemplo: Ordenar los productos por precio
+
+"SELECT * FROM Products ORDER BY Price"
+
+// -- DESC
+
+// ORDER BY ordena los registros en forma ascendente de forma predeterminada,
+// para ordenar los registros en forma descendente, utilizamos DESC palabra clave
+
+// Ejemplo: Ordena los productos del precio mas alto al mas bajo
+
+"SELECT * FROM Products ORDER BY Price DESC"
+
+// -- Ordenar Alfabéticamente
+
+// Para valores de cadena ORDER BY ordenara alfabeticamente
+
+// Ejemplo: Ordena los productos alfabeticamente por ProductName
+
+"SELECT * FROM Products ORDER BY ProductName"
+
+// -- Alfabéticamente DESC
+
+// Para ordenar las tablas alfabeticamente en revesar utilizamos DESC
+
+// Ejemplo: Ordenas los prodcutos de ProductName en orden inverso
+
+"SELECT * FROM Products ORDER BY ProductName DESC"
+
+// -- ORDENAR POR Varias Columnas
+
+// La siguiente instrucción SQL selecciona a todos los clientes de la tabla "Clientes", 
+// ordenado por la columna "País" y "Nombre del cliente". Esto significa que ordena por País, 
+// pero si algunas filas tienen el mismo País, las ordena por Nombre del cliente:
+
+"SELECT * FROM Customers ORDER BY Country, CustomerName"
+
+// -- Usando ASC y DESC
+
+// La siguiente instrucción SQL selecciona a todos los clientes de la tabla "Clientes",
+//  ordenados ascendiendo por el "País" y descendiendo por la columna "CustomerName":
+
+"SELECT * FROM Customers ORDER BY Country ASC, CustomerName DESC;"
