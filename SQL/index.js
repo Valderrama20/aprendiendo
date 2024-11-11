@@ -172,3 +172,63 @@ IN      - Para busca ciertos valores WHERE City IN ('Paris','London')
 //  ordenados ascendiendo por el "País" y descendiendo por la columna "CustomerName":
 
 "SELECT * FROM Customers ORDER BY Country ASC, CustomerName DESC;"
+
+// Operador AND en SQL
+
+// EL END se utiliza para incluir mas de una condicion, por ejemplo si quiero filtrar y dolver a todos los clientes 
+// de españa que tengan un nombre con la inicial G
+
+// Practica: Selecciona todos los clientes de España que empiecen con la letra 'G':
+
+"SELECT * FROM Customers WHERE Country = 'Spain' AND CustomerName LIKE 'G%"
+
+// -- AND vs OR
+
+// El AND muestra el registro si todas las condiciones son verdaderas
+// El OR muestra el registro si cualquieras de las condiciones son verdaderas
+
+// Todas las Condiciones Deben Ser Verdaderas
+
+// La siguiente instrucción SQL selecciona todos los campos de Customers donde Country es 
+// "Alemania" Y City es "Berlín" Y PostalCode es superior a 12000:
+
+"SELECT * FROM Customers WHERE Country = 'Alemania' AND City = 'Berlin' AND PostalCode > 1200"
+
+// -- Combinación AND y OR 
+
+// Puedes combinar el AND y OR operadores
+// La siguiente declaración SQL selecciona a todos los clientes de España que comienzan con una "G" o una "R".
+// Asegúrese de usar paréntesis para obtener el resultado correcto.
+
+// Practica: Seleccione todos los clientes españoles los cuales 
+// Tengan un nombre con inicial G o R
+
+"SELECT * FROM Customers WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%')"
+
+// Sin paréntesis, la declaración selecta devolverá a todos los clientes de España que comience con una "G"
+// más todos los clientes que comienzan con una "R", independientemente del valor del país:
+
+// -- Operador OR en SQL
+
+// La clausula WHERE puede contener uno mas operadores OR
+
+// El OR operador se utiliza para filtrar registros en función de más de una condición, como
+//  si lo deseara devolver todos los clientes de Alemania pero también los de España:
+
+// Practica: Seleciona todos los clientes de alemania o españa
+
+"SELECT * FROM Customers WHERE Country = 'Alemania' OR Country = 'España'"
+
+
+// -- Al Menos Una Condición Debe Ser Verdadera
+
+// La siguiente instrucción SQL selecciona todos los campos de Clientes donde City es "Berlín",
+//  CustomerName comienza con la letra "G" o Country es "Noruega":
+
+"SELECT * FROM Customers WHERE City = 'Berlin' OR CustomerName LIKE 'G%' OR Country = 'Noruega';"
+
+// -- Operador NOT en SQL
+
+// El operador NOT se utiliza en combinacion con otros operadores para dar resultados opuestos, tambien llamado resultados negativos
+// En la declaración de selección a continuación, queremos devolver a todos los clientes que NO son de España:
+
