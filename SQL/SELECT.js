@@ -232,3 +232,34 @@ IN      - Para busca ciertos valores WHERE City IN ('Paris','London')
 // El operador NOT se utiliza en combinacion con otros operadores para dar resultados opuestos, tambien llamado resultados negativos
 // En la declaración de selección a continuación, queremos devolver a todos los clientes que NO son de España:
 
+// Ejemplo: 
+
+"SELECT * FROM Customers WHERE NOT Country = 'Spain';"
+
+// En el ejemplo anterior, el NOT el operador se utiliza en combinación con el = operador,
+// pero se puede utilizar en combinación con otros operadores de comparación y/o lógicos.
+
+// -- NOT LIKE
+// Practica: Seleccione clientes que no comiencen con la letra 'A':
+
+"SELECT * FROM Customers WHERE CustomerName NOT LIKE 'A%';"
+
+// -- NOT BETWEEN
+// practica: Seleccione clientes con un customerID que no esten entre 10 y 60:
+
+"SELECT * FROM Customers WHERE CustomerID NOT BETWEEN 20 AND 60;"
+
+// -- NOT IN
+// Practica: Seleccione clientes que no sean de París o Londres:
+
+"SELECT * FROM Customers WHERE City NOT IN ('Paris','London');"
+
+// -- NO Mayor que
+// practica: Seleccione clientes con un CustomerId no mayor de 50:
+
+"SELECT * FROM Customers WHERE NOT CustomerId > 50;"
+
+// -- NO Menos Que
+// Practica: Seleccione clientes con un CustomerID no menos de 50:
+
+"SELECT * FROM Customers WHERE NOT CustomerId < 50"
