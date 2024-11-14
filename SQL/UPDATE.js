@@ -10,7 +10,7 @@
 "UPDATE  Customers SET ContactName = 'Jose', City= 'Frankfurt' WHERE CustomerId = 1"
 
 // IMPORTANTE: Simpre que se utilices, hay que especificar en el WHERE cual fila de la tabla
-// quieres modificar ya que si omites el WHERE se actualizaran todos los registros de la tabla
+// quieres modificar ya que si omites el WHERE se actualizaran todos los registros de la tabla  
 
 // -- ACTUALIZAR Múltiples Registros
 
