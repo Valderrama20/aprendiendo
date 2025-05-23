@@ -120,5 +120,49 @@ fn main() {
 
     // Funciones
 
+    // En las funcions, la ultima expresion del cuerpo (o de cualquier bloque) se convierte en el valor devuelto,
+    // solamente omitiendo el ; al final de la expresion.
+    // tambien podemos utilziar la palabra claver return para devolver un valor antes del final de la funcion
+
+    println!("gcd: {}", gcd(143, 42));
+
+    // Macros
+
+    // los macros son herramientas que te proporciona rust.
+    // se distinguen de las funciones normales ya que al final llevan "!"
+
+    // println!(format, ..) imprime una linea a la salida estándar (“standard output”), aplicando el formato descrito en std::fmt.
+    // format!(format, ..) funciona igual que println!, pero devuelve el resultado en forma de cadena.
+    // dbg!(expression) registra el valor de la expresión y lo devuelve.
+    // todo!() marca un fragmento de código como no implementado todavía. Si se ejecuta, activará un error pánico.
+    // unreachable!() marca un fragmento de código como inaccesible. Si se ejecuta, activará un error pánico.
     
+    let n = 4;
+    println!("{n}! = {}", factorial(n));
+
+    // fissbuzz(20);
+}
+
+// funciones
+
+fn gcd(a: u32, b: u32) -> u32 {
+    if b > 0 {
+        gcd(b, a % 2)
+    } else {
+        a
+    }
+}
+
+// Macros
+
+fn factorial(n: i32) -> i32 {
+    let mut product = 1;
+    for i in 1..=n {
+        product *= dbg!(i);
+    }
+    product
+}
+
+fn fissbuzz(_n: i32) -> i32 {
+    todo!()
 }
