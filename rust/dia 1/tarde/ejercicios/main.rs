@@ -17,7 +17,7 @@ fn main() {
 fn magnitude(arr: &[f64]) -> f64{
    let mut result: f64 = 0.0;
    for magnitud in arr {
-    result += magnitud * magnitud;
+    result *=  magnitud;
    }
    result.sqrt()
 }
