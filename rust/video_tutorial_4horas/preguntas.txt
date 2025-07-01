@@ -1,0 +1,3 @@
+Por que se utilizar --bin al crear un proyecto con cargo??
+
+que son las features de una dependencia

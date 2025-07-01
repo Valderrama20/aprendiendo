@@ -1,0 +1,1 @@
+/home/valderrama20/Escritorio/aprendiendo/rust/practicas/organizador_archivos/target/debug/organizador_archivos: /home/valderrama20/Escritorio/aprendiendo/rust/practicas/organizador_archivos/src/main.rs
