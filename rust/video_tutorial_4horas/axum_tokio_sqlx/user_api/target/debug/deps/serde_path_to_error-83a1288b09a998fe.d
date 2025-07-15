@@ -1,9 +1,0 @@
-/home/valderrama20/Escritorio/aprendiendo/rust/axum_tokio_sqlx/user_api/target/debug/deps/libserde_path_to_error-83a1288b09a998fe.rmeta: /home/valderrama20/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_path_to_error-0.1.17/src/lib.rs /home/valderrama20/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_path_to_error-0.1.17/src/de.rs /home/valderrama20/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_path_to_error-0.1.17/src/path.rs /home/valderrama20/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_path_to_error-0.1.17/src/ser.rs /home/valderrama20/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_path_to_error-0.1.17/src/wrap.rs
-
-/home/valderrama20/Escritorio/aprendiendo/rust/axum_tokio_sqlx/user_api/target/debug/deps/serde_path_to_error-83a1288b09a998fe.d: /home/valderrama20/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_path_to_error-0.1.17/src/lib.rs /home/valderrama20/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_path_to_error-0.1.17/src/de.rs /home/valderrama20/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_path_to_error-0.1.17/src/path.rs /home/valderrama20/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_path_to_error-0.1.17/src/ser.rs /home/valderrama20/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_path_to_error-0.1.17/src/wrap.rs
-
-/home/valderrama20/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_path_to_error-0.1.17/src/lib.rs:
-/home/valderrama20/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_path_to_error-0.1.17/src/de.rs:
-/home/valderrama20/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_path_to_error-0.1.17/src/path.rs:
-/home/valderrama20/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_path_to_error-0.1.17/src/ser.rs:
-/home/valderrama20/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_path_to_error-0.1.17/src/wrap.rs:
