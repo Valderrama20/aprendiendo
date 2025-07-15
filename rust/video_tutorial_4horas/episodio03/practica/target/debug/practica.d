@@ -1,1 +1,0 @@
-/home/valderrama20/Escritorio/aprendiendo/rust/video_tutorial_4horas/episodio03/practica/target/debug/practica: /home/valderrama20/Escritorio/aprendiendo/rust/video_tutorial_4horas/episodio03/practica/src/main.rs
