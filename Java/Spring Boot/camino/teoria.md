@@ -608,3 +608,111 @@ Así tu código será:
 - Más limpio
 - Más mantenible
 - Más fácil de testear
+
+# Inyección de dependencias
+
+La **inyección de dependencias (Dependency Injection, DI)** es un **patrón de diseño** que permite que los objetos **reciban sus dependencias desde el exterior**, en lugar de crearlas internamente.
+
+El objetivo principal es:
+
+- Reducir el acoplamiento entre componentes
+- Facilitar el mantenimiento del código
+- Mejorar la escalabilidad y la testabilidad de la aplicación
+
+👉 Una dependencia es cualquier objeto que una clase necesita para funcionar.
+
+---
+
+## Inversión de Control (IoC)
+
+La **Inversión de Control (IoC)** es el principio en el que se basa la inyección de dependencias.
+
+En lugar de que el código controle:
+
+- La creación
+- La gestión
+- El ciclo de vida de los objetos
+
+Ese control se **invierte** y pasa a un **contenedor o framework**, como **Spring**.
+
+👉 El desarrollador define _qué necesita_, y Spring se encarga del _cómo y cuándo_.
+
+---
+
+## ¿Cómo funciona en Spring Boot?
+
+En Spring Boot:
+
+- El contenedor de Spring detecta las clases anotadas
+- Crea automáticamente las instancias necesarias
+- Inyecta las dependencias donde se requieran
+
+Todo esto ocurre sin que el desarrollador tenga que crear objetos manualmente con `new`.
+
+---
+
+## Tipos de inyección de dependencias en Spring Boot
+
+### Inyección por constructor
+
+- Las dependencias se pasan a través del constructor
+- Es la **forma recomendada**
+- Garantiza que la clase siempre tenga sus dependencias
+
+✅ Más segura  
+✅ Facilita los tests  
+✅ Hace las dependencias explícitas
+
+---
+
+### Inyección por setter
+
+- Las dependencias se inyectan mediante métodos setter
+- Útil cuando una dependencia es opcional
+
+❌ Menos segura que la de constructor
+
+---
+
+### Inyección por campo
+
+- Las dependencias se inyectan directamente en los atributos de la clase
+- Se realiza mediante anotaciones
+
+❌ Menos recomendable  
+❌ Dificulta el testing  
+❌ Oculta dependencias
+
+---
+
+## Anotaciones principales
+
+### @Service
+
+Indica que una clase debe ser tratada como un **servicio**.
+
+Esto significa que:
+
+- Spring gestionará su creación
+- Se registrará como un **bean**
+- Podrá ser inyectada en otras partes de la aplicación
+
+Se usa normalmente en la **capa de servicios**.
+
+---
+
+### @Autowired
+
+Indica a Spring que debe **inyectar automáticamente una dependencia** en el punto donde se declara.
+
+Spring buscará un bean compatible y lo asignará.
+
+👉 Actualmente, se recomienda usar **inyección por constructor**, lo que permite prescindir de `@Autowired` en muchos casos.
+
+---
+
+## Idea clave
+
+👉 _No crees dependencias, decláralas._
+
+Spring se encarga del resto… y tú te ahorras dolores de cabeza 😄
