@@ -1,0 +1,31 @@
+[package]
+name = "user_api"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+# framework web modular.
+axum = "0.8"
+
+# runtime asíncrono
+tokio = { version = "1", features = ["full"] }
+
+# serialización JSON para peticiones y respuestas.
+serde = { version = "1", features = ["derive"] }
+serde_json = "1.0"
+
+# toolkit de SQL asíncrono. Soporta Postgres (activado con "postgres") y 
+# verificaciones de consulta en compilación 
+sqlx = { version = "0.6", features = [
+    "runtime-tokio-rustls",  # Usa Tokio como runtime y TLS con Rustls
+    "postgres",              # Soporte para Postgres
+    "macros",                 # Habilita derivados como #[derive(FromRow)]
+    "uuid"
+] }
+
+# carga variables de entorno (como la URL de BD) desde un archivo .env.
+dotenvy = "0.15"
+
+# para generar IDs de usuario únicos.
+uuid = { version = "1", features = ["v4", "serde"] }

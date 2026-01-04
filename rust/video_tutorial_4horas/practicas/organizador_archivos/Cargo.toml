@@ -1,0 +1,11 @@
+[package]
+name = "organizador_archivos"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4.4", features = ["derive"]}   # CLI de argumentos
+walkdir = "2.3"                                    # Recorrido recursivo de directorios
+mime_guess = "2.0"                                 # Adivina tipo MIME/extension
+log = "0.4"                                        # login
+env_logger = "0.10"                                # inicializador de logging

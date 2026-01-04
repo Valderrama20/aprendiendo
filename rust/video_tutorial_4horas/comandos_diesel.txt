@@ -1,0 +1,8 @@
+iniciar diesel:
+diesel setup
+
+crear migraciones:
+diesel migration generate <nombre_migracion>
+
+Ejecutar migraciones:
+diesel migration run
