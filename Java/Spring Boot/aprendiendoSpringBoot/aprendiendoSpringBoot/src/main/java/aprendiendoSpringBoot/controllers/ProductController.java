@@ -1,6 +1,7 @@
 package aprendiendoSpringBoot.controllers;
 
 import aprendiendoSpringBoot.domain.Product;
+import aprendiendoSpringBoot.service.ProductsService;
 import aprendiendoSpringBoot.service.ProductsServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +14,7 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
 
-    private ProductsServiceImpl productsService = new ProductsServiceImpl();
+    private ProductsService productsService = new ProductsServiceImpl();
 
     @GetMapping
     public ResponseEntity<?> getProducts() {

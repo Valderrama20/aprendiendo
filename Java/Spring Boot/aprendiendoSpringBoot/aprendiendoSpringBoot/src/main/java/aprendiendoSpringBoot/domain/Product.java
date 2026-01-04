@@ -4,16 +4,16 @@ public class Product {
 
     // Atributos
     private Integer id;
-    private String nombre;
-    private Double precio;
+    private String name;
+    private Double price;
     private Integer stock;
 
     // Constructor
-    public Product(Integer id, String nombre, Integer stock, Double precio) {
+    public Product(Integer id, String name, Integer stock, Double price) {
         this.id = id;
-        this.nombre = nombre;
+        this.name = name;
         this.stock = stock;
-        this.precio = precio;
+        this.price = price;
     }
 
     // Getters and setters
@@ -25,20 +25,20 @@ public class Product {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Double getPrecio() {
-        return precio;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setPrecio(Double precio) {
-        this.precio = precio;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public Integer getStock() {

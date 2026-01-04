@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ProductsServiceImpl {
+public class ProductsServiceImpl implements ProductsService {
 
     List<Product> products = new ArrayList<>(Arrays.asList(
             new Product(1, "Manzana", 10, 2.0)

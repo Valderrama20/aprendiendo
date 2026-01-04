@@ -370,7 +370,6 @@ Es un tipo específico de URI que indica:
 
 👉 Al crear un recurso, una buena práctica es devolver en las cabeceras HTTP el campo **Location** con la URL del recurso creado.
 
-
 ---
 
 # Versionado y estructuración de URLs
@@ -396,12 +395,14 @@ Las **convenciones de URL** definen cómo estructuramos nuestras rutas para que 
 Una buena convención facilita el uso y entendimiento de la API tanto para desarrolladores como para clientes.
 
 Buenas prácticas comunes:
+
 - Usar **sustantivos** para representar recursos (`/users`, `/products`)
 - Utilizar **verbos HTTP** para indicar la acción (`GET`, `POST`, `PUT`, `DELETE`)
 - Emplear **parámetros claros y descriptivos**
 - Evitar verbos en la URL (`/getUsers` ❌, `/users` ✅)
 
 Ejemplo:
+
 ```
 
 GET /api/v1/users/1
@@ -415,9 +416,10 @@ GET /api/v1/users/1
 El **versionado de la API** permite que diferentes versiones de una misma API **coexistan simultáneamente**.
 
 Esto asegura que:
+
 - Los cambios no rompan clientes existentes
 - Se pueda migrar de versión de forma progresiva
-- Se mantenga compatibilidad hacia atrás (*backward compatibility*)
+- Se mantenga compatibilidad hacia atrás (_backward compatibility_)
 
 ---
 
@@ -430,6 +432,7 @@ Es el método **más simple y común**.
 Consiste en incluir la versión directamente en la ruta.
 
 Ejemplo:
+
 ```
 
 /api/v1/users
@@ -448,6 +451,7 @@ Ejemplo:
 La versión se envía a través de los **headers** de la petición.
 
 Ejemplo:
+
 ```
 
 API-Version: v1
@@ -465,6 +469,7 @@ API-Version: v1
 La versión se envía como un **query parameter** en la URL.
 
 Ejemplo:
+
 ```
 
 /api/users?version=1
@@ -480,6 +485,7 @@ Ejemplo:
 ## Recomendación general
 
 Para la mayoría de los proyectos:
+
 - El **versionado en la URL** suele ser la mejor opción por su simplicidad y claridad.
 - En APIs más avanzadas, el versionado por **headers** puede ser una buena alternativa.
 
@@ -490,6 +496,7 @@ La clave es **elegir un enfoque y ser consistente** en toda la API.
 La **capa de servicios** es donde reside la **lógica de negocio** de la aplicación, es decir, la funcionalidad principal que define **cómo opera el sistema**.
 
 En esta capa se implementan:
+
 - Reglas de negocio
 - Procesos principales
 - Validaciones
@@ -505,6 +512,7 @@ Su responsabilidad es **procesar la información y aplicar la lógica correspond
 En una aplicación de gestión de productos:
 
 - La **capa de servicios**:
+
   - Gestiona la lógica relacionada con los productos
   - Decide cómo se crean, actualizan, eliminan o validan
   - Interactúa con la capa de acceso a datos
@@ -519,6 +527,7 @@ En una aplicación de gestión de productos:
 ## Separación de responsabilidades
 
 Esta separación permite:
+
 - Código más limpio y organizado
 - Mayor facilidad de mantenimiento
 - Mejor escalabilidad
@@ -526,3 +535,76 @@ Esta separación permite:
 
 👉 En resumen:  
 La **capa de servicios piensa**, la **capa de presentación habla**, y la **base de datos guarda silencio** 😄
+
+# Programación orientada a interfaces
+
+La **programación orientada a interfaces** es un enfoque dentro de la **programación orientada a objetos (POO)** que consiste en definir **qué debe hacer una clase**, sin especificar **cómo debe hacerlo**.
+
+Para ello, se utilizan **interfaces**, que actúan como un **contrato** que las clases deben cumplir.
+
+👉 En otras palabras:  
+se separa **la definición del comportamiento** del **detalle de su implementación**.
+
+---
+
+## ¿Qué es una interfaz?
+
+Una **interfaz** es una estructura que define un conjunto de **métodos** que una o más clases deben implementar.
+
+Características principales:
+
+- Define **qué métodos deben existir**
+- **No define cómo** se implementan esos métodos
+- Obliga a las clases a cumplir el contrato establecido
+
+Esto garantiza que distintas implementaciones puedan ser utilizadas de forma intercambiable.
+
+---
+
+## Beneficios de la programación orientada a interfaces
+
+### Abstracción
+
+Permite separar:
+
+- **Qué se necesita** (la interfaz)
+- **Cómo se hace** (la implementación)
+
+Esto facilita:
+
+- La reutilización del código
+- La reducción del acoplamiento entre componentes
+
+---
+
+### Flexibilidad
+
+Gracias a las interfaces, podemos:
+
+- Cambiar una implementación por otra
+- Sin modificar el código que depende de la interfaz
+
+👉 El código consumidor no necesita saber **qué implementación concreta se está usando**.
+
+---
+
+### Escalabilidad
+
+Facilita la evolución del sistema, ya que:
+
+- Se pueden añadir nuevas funcionalidades
+- Implementando nuevas clases que cumplan la misma interfaz
+
+Esto permite crecer la aplicación sin romper el código existente.
+
+---
+
+## Idea clave
+
+👉 _Programa contra interfaces, no contra implementaciones._
+
+Así tu código será:
+
+- Más limpio
+- Más mantenible
+- Más fácil de testear
