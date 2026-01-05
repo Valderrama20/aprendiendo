@@ -1,0 +1,26 @@
+[
+  {
+    "id": 101,
+    "name": "Portátil",
+    "stock": 5,
+    "price": 899.99
+  },
+  {
+    "id": 102,
+    "name": "Auriculares Bluetooth",
+    "stock": 25,
+    "price": 59.90
+  },
+  {
+    "id": 103,
+    "name": "Teclado Mecánico",
+    "stock": 12,
+    "price": 129.50
+  },
+  {
+    "id": 104,
+    "name": "Monitor 27 pulgadas",
+    "stock": 7,
+    "price": 279.00
+  }
+]

@@ -709,10 +709,85 @@ Spring buscará un bean compatible y lo asignará.
 
 👉 Actualmente, se recomienda usar **inyección por constructor**, lo que permite prescindir de `@Autowired` en muchos casos.
 
----
-
 ## Idea clave
 
 👉 _No crees dependencias, decláralas._
 
-Spring se encarga del resto… y tú te ahorras dolores de cabeza 😄
+### @Primary
+
+En Spring Boot, es posible tener **varios beans que implementen la misma interfaz**.
+
+Cuando esto ocurre, Spring **no sabe cuál inyectar** y se produce un conflicto al intentar resolver la dependencia.
+
+Para solucionar este problema, se utiliza la anotación **@Primary**, que indica a Spring **qué bean debe tener prioridad** cuando existen múltiples implementaciones posibles.
+
+---
+
+## ¿Cuándo usar @Primary?
+
+- Cuando hay más de una implementación de una misma interfaz
+- Cuando una de ellas debe ser la opción por defecto
+- Para evitar errores de ambigüedad en la inyección de dependencias
+
+---
+
+## Ejemplo conceptual
+
+Si existen dos implementaciones de una interfaz:
+
+- `ProductRepositoryMySQL`
+- `ProductRepositoryMemory`
+
+Y ambas están registradas como beans, Spring no sabrá cuál usar.
+
+Marcando una como `@Primary`, Spring la seleccionará automáticamente.
+
+👉 Si no se indica `@Primary` ni se usa `@Qualifier`, Spring lanzará una excepción.
+
+---
+
+## Idea clave
+
+👉 `@Primary` define **el bean preferido** cuando hay múltiples opciones disponibles.
+
+---
+
+# Jackson (Biblioteca)
+
+**Jackson** es una biblioteca de Java utilizada para el **procesamiento de datos en formato JSON**.
+
+Es ampliamente usada en Spring Boot para:
+- Convertir objetos Java a JSON
+- Convertir JSON a objetos Java
+
+Spring Boot la integra de forma automática, por lo que normalmente **no es necesario configurarla manualmente**.
+
+---
+
+## Funcionalidades principales
+
+### Serialización
+
+Proceso mediante el cual se convierte un objeto o colección de Java en formato JSON.
+
+Ejemplo:
+- Un `List<Product>` → JSON
+
+---
+
+### Deserialización
+
+Proceso inverso, donde un JSON se convierte en objetos Java.
+
+Ejemplo:
+- JSON → `List<Product>`
+
+---
+
+## Uso en APIs REST
+
+Gracias a Jackson:
+- Los controladores pueden recibir objetos Java desde el `@RequestBody`
+- Las respuestas se devuelven automáticamente en formato JSON
+
+👉 Todo esto ocurre de forma transparente, sin que el desarrollador tenga que intervenir directamente.
