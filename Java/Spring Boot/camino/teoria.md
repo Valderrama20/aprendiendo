@@ -752,11 +752,43 @@ Marcando una como `@Primary`, Spring la seleccionará automáticamente.
 
 ---
 
+### @Qualifier
+
+La anotación **@Qualifier** se utiliza cuando existen **varios beans que implementan la misma interfaz** y queremos **indicar explícitamente cuál de ellos debe inyectarse**.
+
+A diferencia de `@Primary`, que define un bean por defecto, `@Qualifier` permite **seleccionar de forma precisa** la implementación que se desea usar en cada caso.
+
+---
+
+## ¿Cuándo usar @Qualifier?
+
+- Cuando hay múltiples implementaciones de una misma interfaz
+- Cuando no queremos depender de un bean por defecto
+- Cuando necesitamos distintas implementaciones en diferentes partes de la aplicación
+
+---
+
+## ¿Cómo funciona?
+
+`@Qualifier` se usa junto con la inyección de dependencias para indicar el **nombre del bean** que Spring debe inyectar.
+
+De esta forma, se elimina cualquier ambigüedad.
+
+---
+
+## Idea clave
+
+👉 `@Primary` elige una opción por defecto.  
+👉 `@Qualifier` elige **exactamente** qué bean usar.
+
+Ambas anotaciones resuelven el mismo problema, pero de formas distintas.
+
 # Jackson (Biblioteca)
 
 **Jackson** es una biblioteca de Java utilizada para el **procesamiento de datos en formato JSON**.
 
 Es ampliamente usada en Spring Boot para:
+
 - Convertir objetos Java a JSON
 - Convertir JSON a objetos Java
 
@@ -771,6 +803,7 @@ Spring Boot la integra de forma automática, por lo que normalmente **no es nece
 Proceso mediante el cual se convierte un objeto o colección de Java en formato JSON.
 
 Ejemplo:
+
 - Un `List<Product>` → JSON
 
 ---
@@ -780,6 +813,7 @@ Ejemplo:
 Proceso inverso, donde un JSON se convierte en objetos Java.
 
 Ejemplo:
+
 - JSON → `List<Product>`
 
 ---
@@ -787,6 +821,7 @@ Ejemplo:
 ## Uso en APIs REST
 
 Gracias a Jackson:
+
 - Los controladores pueden recibir objetos Java desde el `@RequestBody`
 - Las respuestas se devuelven automáticamente en formato JSON
 

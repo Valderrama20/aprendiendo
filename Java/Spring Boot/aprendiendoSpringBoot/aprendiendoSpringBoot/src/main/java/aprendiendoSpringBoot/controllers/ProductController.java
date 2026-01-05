@@ -4,6 +4,7 @@ import aprendiendoSpringBoot.domain.Product;
 import aprendiendoSpringBoot.service.ProductsService;
 import aprendiendoSpringBoot.service.ProductsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,9 +16,10 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
 
+
     private final ProductsService productsService;
 
-    public ProductController(ProductsService productsService){
+    public ProductController(@Qualifier("listResourceService") ProductsService productsService) {
         this.productsService = productsService;
     }
 
