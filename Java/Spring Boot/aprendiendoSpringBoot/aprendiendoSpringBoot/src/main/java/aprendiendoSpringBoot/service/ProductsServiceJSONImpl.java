@@ -3,6 +3,8 @@ package aprendiendoSpringBoot.service;
 import aprendiendoSpringBoot.domain.Product;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperties;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +12,9 @@ import java.io.IOException;
 import java.util.List;
 
 @Primary
-@Service("jsonResourceService")
+//@Service("jsonResourceService")
+@Service
+@ConditionalOnProperty(name = "service.products", havingValue = "jsonResourceService")
 public class ProductsServiceJSONImpl implements ProductsService {
 
     @Override

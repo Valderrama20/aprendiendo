@@ -783,6 +783,46 @@ De esta forma, se elimina cualquier ambigüedad.
 
 Ambas anotaciones resuelven el mismo problema, pero de formas distintas.
 
+### @ConditionalOnProperty
+
+La anotación **@ConditionalOnProperty** permite **activar o desactivar beans de forma condicional** en función de un valor definido en los **archivos de configuración** de la aplicación.
+
+Estos archivos suelen ser:
+- `application.properties`
+- `application.yml`
+
+Gracias a esta anotación, Spring solo creará un bean **si se cumple una condición específica**, lo que resulta muy útil para:
+- Configuraciones por entorno (dev, test, prod)
+- Funcionalidades opcionales
+- Cambiar comportamientos sin modificar código
+
+---
+
+## ¿Cómo funciona?
+
+Spring evalúa una propiedad de configuración y:
+- Si la condición se cumple → el bean se crea
+- Si no se cumple → el bean no se registra en el contexto
+
+Todo esto se controla desde el archivo de configuración.
+
+---
+
+## Casos de uso comunes
+
+- Habilitar o deshabilitar una funcionalidad
+- Activar implementaciones distintas según el entorno
+- Evitar cargar beans innecesarios
+
+---
+
+## Idea clave
+
+👉 `@ConditionalOnProperty` te permite **controlar el comportamiento de la aplicación desde la configuración**, sin tocar el código.
+
+Menos `if`, más elegancia 😄
+
+
 # Jackson (Biblioteca)
 
 **Jackson** es una biblioteca de Java utilizada para el **procesamiento de datos en formato JSON**.

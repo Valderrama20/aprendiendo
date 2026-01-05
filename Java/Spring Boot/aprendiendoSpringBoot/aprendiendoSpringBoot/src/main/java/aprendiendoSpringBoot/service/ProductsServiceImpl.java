@@ -1,13 +1,16 @@
 package aprendiendoSpringBoot.service;
 
 import aprendiendoSpringBoot.domain.Product;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Service("listResourceService")
+//@Service("listResourceService")
+@Service
+@ConditionalOnProperty(name = "service.products", havingValue = "listResourceService")
 public class ProductsServiceImpl implements ProductsService {
 
     List<Product> products = new ArrayList<>(Arrays.asList(
