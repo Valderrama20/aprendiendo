@@ -5,6 +5,7 @@ import aprendiendoSpringBoot.service.ProductsService;
 import aprendiendoSpringBoot.service.ProductsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,7 @@ public class ProductController {
     private final ProductsService productsService;
 
     // @Qualifier("listResourceService")
-    public ProductController(ProductsService productsService) {
+    public ProductController(@Lazy ProductsService productsService) {
         this.productsService = productsService;
     }
 

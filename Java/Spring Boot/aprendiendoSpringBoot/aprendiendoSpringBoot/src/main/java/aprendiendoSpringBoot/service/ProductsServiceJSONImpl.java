@@ -5,17 +5,23 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
 
-@Primary
+//@Primary
 //@Service("jsonResourceService")
+@Lazy
 @Service
 @ConditionalOnProperty(name = "service.products", havingValue = "jsonResourceService")
 public class ProductsServiceJSONImpl implements ProductsService {
+
+    public ProductsServiceJSONImpl(){
+        System.out.println("Creando instancia");
+    }
 
     @Override
     public List<Product> getProducts() {
